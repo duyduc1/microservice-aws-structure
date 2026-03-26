@@ -8,7 +8,7 @@ services:
       - DB_HOST=database-1.cyf6wcuq0j47.us-east-1.rds.amazonaws.com
       - DB_USER=root
       - DB_PASSWORD=M1aT4Tt7aeXc
-      - DB_NAME=users
+      - DB_NAME=mydb
       - DB_HOST=3306
   order-service:
     build: ./order-service
@@ -18,7 +18,7 @@ services:
       - DB_HOST=database-1.cyf6wcuq0j47.us-east-1.rds.amazonaws.com
       - DB_USER=root
       - DB_PASSWORD=M1aT4Tt7aeXc
-      - DB_NAME=order
+      - DB_NAME=mydb
       - DB_HOST=3306  
   product-service:
     build: ./product-service
@@ -28,5 +28,5 @@ services:
       - DB_HOST=database-1.cyf6wcuq0j47.us-east-1.rds.amazonaws.com
       - DB_USER=root
       - DB_PASSWORD=M1aT4Tt7aeXc
-      - DB_NAME=product
+      - DB_NAME=mydb
       - DB_HOST=3306

@@ -32,7 +32,7 @@ app.post('/order', async (req, res) => {
         const { name, email } = req.body;
 
         const [result] = await pool.execute(
-            'INSERT INTO order (cost, description) VALUES (?, ?)',
+            'INSERT INTO orders (cost, description) VALUES (?, ?)',
             [name, email]
         );
 
@@ -49,7 +49,7 @@ app.post('/order', async (req, res) => {
 // 2. READ ALL
 app.get('/order', async (req, res) => {
     try {
-        const [results] = await pool.execute('SELECT * FROM order');
+        const [results] = await pool.execute('SELECT * FROM orders');
         res.json(results);
     } catch (err) {
         console.error(err);
@@ -63,7 +63,7 @@ app.get('/order/:id', async (req, res) => {
         const { id } = req.params;
 
         const [results] = await pool.execute(
-            'SELECT * FROM order WHERE id = ?',
+            'SELECT * FROM orders WHERE id = ?',
             [id]
         );
 
@@ -81,7 +81,7 @@ app.put('/order/:id', async (req, res) => {
         const { name, email } = req.body;
 
         await pool.execute(
-            'UPDATE order SET cost = ?, description = ? WHERE id = ?',
+            'UPDATE orders SET cost = ?, description = ? WHERE id = ?',
             [name, email, id]
         );
 
@@ -98,7 +98,7 @@ app.delete('/order/:id', async (req, res) => {
         const { id } = req.params;
 
         await pool.execute(
-            'DELETE FROM order WHERE id = ?',
+            'DELETE FROM orders WHERE id = ?',
             [id]
         );
 
