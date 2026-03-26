@@ -1,0 +1,32 @@
+version: '3'
+services:
+  user-service:
+    build: ./user-service
+    ports:
+      - "3001:3000"
+    environment:
+      - DB_HOST=host.docker.internal
+      - DB_USER=root
+      - DB_PASSWORD=M1aT4Tt7aeXc
+      - DB_NAME=mydb
+      - DB_HOST=3306
+  order-service:
+    build: ./order-service
+    ports:
+      - "3002:3000"
+    environment:
+      - DB_HOST=host.docker.internal
+      - DB_USER=root
+      - DB_PASSWORD=M1aT4Tt7aeXc
+      - DB_NAME=mydb
+      - DB_HOST=3306  
+  product-service:
+    build: ./product-service
+    ports:
+      - "3003:3000"
+    environment:
+      - DB_HOST=host.docker.internal
+      - DB_USER=root
+      - DB_PASSWORD=M1aT4Tt7aeXc
+      - DB_NAME=mydb
+      - DB_HOST=3306
