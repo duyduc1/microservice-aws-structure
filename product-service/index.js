@@ -32,7 +32,7 @@ app.post('/product', async (req, res) => {
         const { name, email } = req.body;
 
         const [result] = await pool.execute(
-            'INSERT INTO product (products, price) VALUES (?, ?)',
+            'INSERT INTO product (product_name, price) VALUES (?, ?)',
             [name, email]
         );
 
@@ -81,7 +81,7 @@ app.put('/product/:id', async (req, res) => {
         const { name, email } = req.body;
 
         await pool.execute(
-            'UPDATE product SET product = ?, price = ? WHERE id = ?',
+            'UPDATE product SET product_name = ?, price = ? WHERE id = ?',
             [name, email, id]
         );
 
