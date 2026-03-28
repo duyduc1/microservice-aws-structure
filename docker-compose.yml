@@ -9,7 +9,7 @@ services:
       - DB_USER=root
       - DB_PASSWORD=M1aT4Tt7aeXc
       - DB_NAME=mydb
-      - DB_HOST=3306
+      - DB_PORT=3306
   order-service:
     build: ./order-service
     ports:
@@ -19,7 +19,7 @@ services:
       - DB_USER=root
       - DB_PASSWORD=M1aT4Tt7aeXc
       - DB_NAME=mydb
-      - DB_HOST=3306  
+      - DB_PORT=3306  
   product-service:
     build: ./product-service
     ports:
@@ -29,4 +29,4 @@ services:
       - DB_USER=root
       - DB_PASSWORD=M1aT4Tt7aeXc
       - DB_NAME=mydb
-      - DB_HOST=3306
+      - DB_PORT=3306
