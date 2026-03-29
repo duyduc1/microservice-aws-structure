@@ -29,11 +29,11 @@ const pool = mysql.createPool({
 // 1. CREATE
 app.post('/order', async (req, res) => {
     try {
-        const { name, email } = req.body;
+        const { cost, description } = req.body;
 
         const [result] = await pool.execute(
             'INSERT INTO orders (cost, description) VALUES (?, ?)',
-            [name, email]
+            [cost, description]
         );
 
         res.json({
@@ -78,11 +78,11 @@ app.get('/order/:id', async (req, res) => {
 app.put('/order/:id', async (req, res) => {
     try {
         const { id } = req.params;
-        const { name, email } = req.body;
+        const { cost, description } = req.body;
 
         await pool.execute(
             'UPDATE orders SET cost = ?, description = ? WHERE id = ?',
-            [name, email, id]
+            [cost, description, id]
         );
 
         res.json({ message: 'Order updated' });
