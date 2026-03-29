@@ -5,7 +5,7 @@ services:
     ports:
       - "3001:3000"
     environment:
-      - DB_HOST=database-micro.cyf6wcuq0j47.us-east-1.rds.amazonaws.com
+      - DB_HOST=microservice-test.cyf6wcuq0j47.us-east-1.rds.amazonaws.com
       - DB_USER=root
       - DB_PASSWORD=M1aT4Tt7aeXc
       - DB_NAME=mydb
@@ -15,7 +15,7 @@ services:
     ports:
       - "3002:3000"
     environment:
-      - DB_HOST=database-micro.cyf6wcuq0j47.us-east-1.rds.amazonaws.com
+      - DB_HOST=microservice-test.cyf6wcuq0j47.us-east-1.rds.amazonaws.com
       - DB_USER=root
       - DB_PASSWORD=M1aT4Tt7aeXc
       - DB_NAME=mydb
@@ -25,7 +25,7 @@ services:
     ports:
       - "3003:3000"
     environment:
-      - DB_HOST=database-micro.cyf6wcuq0j47.us-east-1.rds.amazonaws.com
+      - DB_HOST=microservice-test.cyf6wcuq0j47.us-east-1.rds.amazonaws.com
       - DB_USER=root
       - DB_PASSWORD=M1aT4Tt7aeXc
       - DB_NAME=mydb
